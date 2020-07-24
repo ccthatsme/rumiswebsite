@@ -31,3 +31,13 @@ li:hover{
     float: left;
 }
 
+#rumiImage{
+    height: 73px;
+    max-height: 900px;
+    max-width: 1200px;
+    width: 97px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
