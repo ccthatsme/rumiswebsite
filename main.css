@@ -1,3 +1,33 @@
 h1 {
     text-align: center;
 }
+
+ul {
+    float: left;
+    
+}
+
+li {
+    display: inline-block;
+    background-color: white;
+    padding: 8px;
+}
+
+/* #blankList{
+    display: inline-block;
+    background-color: red;
+    padding: 2px; 
+    border-radius: 5px; 
+} */
+
+li:hover{
+    display: inline-block;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
+
+#navBarContainer{
+    float: left;
+}
+
