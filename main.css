@@ -11,14 +11,9 @@ li {
     display: inline-block;
     background-color: white;
     padding: 8px;
+    border-radius: 5px;
 }
 
-/* #blankList{
-    display: inline-block;
-    background-color: red;
-    padding: 2px; 
-    border-radius: 5px; 
-} */
 
 li:hover{
     display: inline-block;
@@ -29,6 +24,8 @@ li:hover{
 
 #navBarContainer{
     float: left;
+    width: 100%;
+    background-color: rgb(223, 219, 219);
 }
 
 #rumiImage{
