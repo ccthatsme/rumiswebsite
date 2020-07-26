@@ -26,6 +26,8 @@ li:hover{
     float: left;
     width: 100%;
     background-color: rgb(223, 219, 219);
+    display: inline-block;
+    border-radius: 5px;
 }
 
 #rumiImage{

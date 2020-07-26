@@ -1,0 +1,20 @@
+{
+  "name": "rumi_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "productlist.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccthatsme/rumiswebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccthatsme/rumiswebsite/issues"
+  },
+  "homepage": "https://github.com/ccthatsme/rumiswebsite#readme"
+}

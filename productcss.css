@@ -1,0 +1,62 @@
+h1 {
+    text-align: center;
+}
+
+#container {
+    float: left;
+    
+}
+
+li {
+    display: inline-block;
+    background-color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+
+li:hover{
+    display: inline-block;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
+
+#navBarContainer{
+    float: left;
+    
+    border-radius: 5px;
+}
+
+#productContainer{
+    float: right;
+    
+}
+
+#specificProduct{
+    display: inline-block;
+    background-color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#specificProduct:hover{
+    display: inline-block;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
+
+
+#navBarProductsContainer{
+    float: right;
+    margin-right: 40px;
+    border-radius: 5px;
+}
+
+#navbarParent{
+    width: 100%;
+    background-color: rgb(223, 219, 219);
+    display: inline-block;
+    border-radius: 5px;
+}
