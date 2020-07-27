@@ -1,6 +1,14 @@
 // const json = fetch("./productlist.json").then(response => response.json()).then(json => console.log(json));
+const json = [];
 
-const json = fetch("./productlist.json").then(response => response.json());
+fetch("./productlist.json").then(response => response.json().then((jsonResponse) => {
+    jsonResponse.forEach(element => {
+        json.push(element);
+    });
+    
+}));
+
+console.log(json);
 
 const productNavbar = document.getElementById('productContainer');
 
@@ -11,16 +19,29 @@ displayProduct = (e) => {
 
     switch (product) {
         case "Cakes":
-            console.log(product);
-            fetch("./productlist.json").then(response => response.json().then( (jsonResponse) => {console.log(jsonResponse.id)}));
+        // console.log(json[0]);
+        json.filter(function filterCategory(item){
+            if(item.category === product){
+            console.log(item);
+            }
+        });
             break;
         case "Bread":
-            console.log('bread');
+            json.filter(function filterCategory(item){
+                if(item.category === product){
+                console.log(item);
+                }
+            });
             break;
         case "Cookies":
-            console.log('cookies');
+            json.filter(function filterCategory(item){
+                if(item.category === product){
+                console.log(item);
+                }
+            });
             break;
         default:
+            console.log('nothing to see');
             break;
     }
 }
@@ -53,3 +74,8 @@ function navigateTo(e){
 navbar.addEventListener("click", navigateTo, false);
 
 productNavbar.addEventListener("click", displayProduct, false);
+
+
+
+//this was used in the switch case to see the response from the json
+   // fetch("./productlist.json").then(response => response.json().then( (jsonResponse) => {console.log(jsonResponse[0])}));

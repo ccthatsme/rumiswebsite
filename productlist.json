@@ -1,7 +1,24 @@
-{
+[
+    {
     "id": "1",
+    "category":"Cakes",
     "name": "Pumpkin Roll",
     "size": "8\" long",
     "price": "12.95"
-}
+    },
+    {
+    "id": "2",
+    "category":"Bread",
+    "name": "Multigran",
+    "size": "loaf",
+    "price": "4.95"
+    },
+    {
+    "id": "3",
+    "category":"Cookies",
+    "name": "Chocolate Chip",
+    "size": "9 ounces",
+    "price": "4.75"
+    }
+]
 
