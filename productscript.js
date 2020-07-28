@@ -1,4 +1,8 @@
 // const json = fetch("./productlist.json").then(response => response.json()).then(json => console.log(json));
+const tr = document.getElementById('data');
+
+
+
 const json = [];
 
 fetch("./productlist.json").then(response => response.json().then((jsonResponse) => {
@@ -7,8 +11,6 @@ fetch("./productlist.json").then(response => response.json().then((jsonResponse)
     });
     
 }));
-
-console.log(json);
 
 const productNavbar = document.getElementById('productContainer');
 
@@ -22,21 +24,43 @@ displayProduct = (e) => {
         // console.log(json[0]);
         json.filter(function filterCategory(item){
             if(item.category === product){
-            console.log(item);
+                for(const property in item){
+                    if(property !== 'id' && property !== 'category'){
+                        let td = document.createElement('td');
+                        td.innerHTML = item[property];
+                        tr.appendChild(td);
+                    }
+                   
+                }
+       
             }
         });
             break;
         case "Bread":
             json.filter(function filterCategory(item){
                 if(item.category === product){
-                console.log(item);
+                    for(const property in item){
+                        if(property !== 'id' && property !== 'category'){
+                            let td = document.createElement('td');
+                            td.innerHTML = item[property];
+                            tr.appendChild(td);
+                        }
+                       
+                    }
                 }
             });
             break;
         case "Cookies":
             json.filter(function filterCategory(item){
                 if(item.category === product){
-                console.log(item);
+                    for(const property in item){
+                        if(property !== 'id' && property !== 'category'){
+                            let td = document.createElement('td');
+                            td.innerHTML = item[property];
+                            tr.appendChild(td);
+                        }
+                       
+                    }
                 }
             });
             break;
