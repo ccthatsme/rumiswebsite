@@ -21,7 +21,7 @@ displayProduct = (e) => {
 
     switch (product) {
         case "Cakes":
-        // console.log(json[0]);
+       tr.innerHTML = "";
         json.filter(function filterCategory(item){
             if(item.category === product){
                 for(const property in item){
@@ -37,6 +37,7 @@ displayProduct = (e) => {
         });
             break;
         case "Bread":
+            tr.innerHTML = "";
             json.filter(function filterCategory(item){
                 if(item.category === product){
                     for(const property in item){
@@ -51,6 +52,7 @@ displayProduct = (e) => {
             });
             break;
         case "Cookies":
+            tr.innerHTML = "";
             json.filter(function filterCategory(item){
                 if(item.category === product){
                     for(const property in item){
