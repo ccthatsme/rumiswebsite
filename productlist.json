@@ -19,6 +19,13 @@
     "name": "Chocolate Chip",
     "size": "9 ounces",
     "price": "4.75"
-    }
+    },
+    {
+        "id": "4",
+        "category":"Cookies",
+        "name": "Peanut Butter",
+        "size": "9 ounces",
+        "price": "4.75"
+        }
 ]
 

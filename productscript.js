@@ -1,7 +1,6 @@
 // const json = fetch("./productlist.json").then(response => response.json()).then(json => console.log(json));
-const tr = document.getElementById('data');
-
-
+const tbody = document.getElementById('data');
+// const tr = document.createElement('tr');
 
 const json = [];
 
@@ -11,6 +10,26 @@ fetch("./productlist.json").then(response => response.json().then((jsonResponse)
     });
     
 }));
+
+const cookieArray = [];
+const example = "";
+
+json.filter(function filterCategory(item){
+    if(item.category === product){
+        for(const property in item){
+            let tr = document.createElement('tr');
+            let td = document.createElement('td');
+            if(property !== 'id' && property !== 'category'){ 
+                console.log(property);
+                example = `${property}:`;
+                console.log(example);
+                
+            }  
+        }
+    }
+});
+console.log(cookieArray);
+console.log(example);
 
 const productNavbar = document.getElementById('productContainer');
 
@@ -26,9 +45,12 @@ displayProduct = (e) => {
             if(item.category === product){
                 for(const property in item){
                     if(property !== 'id' && property !== 'category'){
+                        
                         let td = document.createElement('td');
                         td.innerHTML = item[property];
+                        
                         tr.appendChild(td);
+                        tbody.appendChild(tr);
                     }
                    
                 }
@@ -52,15 +74,20 @@ displayProduct = (e) => {
             });
             break;
         case "Cookies":
-            tr.innerHTML = "";
+            // tr.innerHTML = "";
             json.filter(function filterCategory(item){
                 if(item.category === product){
                     for(const property in item){
+                        let tr = document.createElement('tr');
+                        let td = document.createElement('td');
                         if(property !== 'id' && property !== 'category'){
-                            let td = document.createElement('td');
+                           
                             td.innerHTML = item[property];
-                            tr.appendChild(td);
+                            
+                            
                         }
+                        tr.appendChild(td);
+                            tbody.appendChild(tr);
                        
                     }
                 }
@@ -71,6 +98,8 @@ displayProduct = (e) => {
             break;
     }
 }
+
+
 
 function navigateTo(e){
     let element = e.target.innerHTML;
