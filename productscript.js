@@ -3,33 +3,30 @@ const tbody = document.getElementById('data');
 // const tr = document.createElement('tr');
 
 const json = [];
+const cookieArray = [];
+const breadArray = [];
+const cakeArray = [];
 
 fetch("./productlist.json").then(response => response.json().then((jsonResponse) => {
     jsonResponse.forEach(element => {
-        json.push(element);
+        if(element.category === 'Cakes'){
+            cakeArray.push(element);    
+        }
+        else if(element.category === 'Bread'){
+            breadArray.push(element);    
+        }
+        else if(element.category === 'Cookies'){
+            cookieArray.push(element);    
+        }
     });
     
 }));
 
-const cookieArray = [];
-const example = "";
-
-json.filter(function filterCategory(item){
-    if(item.category === product){
-        for(const property in item){
-            let tr = document.createElement('tr');
-            let td = document.createElement('td');
-            if(property !== 'id' && property !== 'category'){ 
-                console.log(property);
-                example = `${property}:`;
-                console.log(example);
-                
-            }  
-        }
-    }
-});
+console.log(cakeArray);
+console.log(breadArray);
 console.log(cookieArray);
-console.log(example);
+
+
 
 const productNavbar = document.getElementById('productContainer');
 
@@ -40,7 +37,7 @@ displayProduct = (e) => {
 
     switch (product) {
         case "Cakes":
-       tr.innerHTML = "";
+       //tr.innerHTML = "";
         json.filter(function filterCategory(item){
             if(item.category === product){
                 for(const property in item){
