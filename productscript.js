@@ -10,13 +10,47 @@ const cakeArray = [];
 fetch("./productlist.json").then(response => response.json().then((jsonResponse) => {
     jsonResponse.forEach(element => {
         if(element.category === 'Cakes'){
-            cakeArray.push(element);    
+            let newElement = {};
+            for(const property in element){
+                if(property !== 'id' && property !== 'category'){
+                newElement[property] = element[property];
+                
+            }
+            else{
+                continue;
+            }
+                
         }
+        cakeArray.push(newElement);  
+    }
         else if(element.category === 'Bread'){
-            breadArray.push(element);    
+            let newElement2 = {};
+            for(const property in element){
+                if(property !== 'id' && property !== 'category'){
+                newElement2[property] = element[property];
+                
+            }
+            else{
+                continue;
+            }
+            
+                
+        }  
+        breadArray.push(newElement2); 
         }
         else if(element.category === 'Cookies'){
-            cookieArray.push(element);    
+            let newElement3 = {};
+            for(const property in element){
+                if(property !== 'id' && property !== 'category'){
+                newElement3[property] = element[property];
+                
+            }
+            else{
+                continue;
+            }
+                
+        }   
+        cookieArray.push(newElement3);
         }
     });
     
@@ -71,24 +105,7 @@ displayProduct = (e) => {
             });
             break;
         case "Cookies":
-            // tr.innerHTML = "";
-            json.filter(function filterCategory(item){
-                if(item.category === product){
-                    for(const property in item){
-                        let tr = document.createElement('tr');
-                        let td = document.createElement('td');
-                        if(property !== 'id' && property !== 'category'){
-                           
-                            td.innerHTML = item[property];
-                            
-                            
-                        }
-                        tr.appendChild(td);
-                            tbody.appendChild(tr);
-                       
-                    }
-                }
-            });
+           
             break;
         default:
             console.log('nothing to see');
