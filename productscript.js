@@ -56,19 +56,13 @@ fetch("./productlist.json").then(response => response.json().then((jsonResponse)
     
 }));
 
-console.log(cakeArray);
-console.log(breadArray);
-console.log(cookieArray);
-
-
-
 const productNavbar = document.getElementById('productContainer');
 
 const navbar = document.getElementById('container');
 
 displayProduct = (e) => {
     let product = e.target.innerHTML;
-
+    tbody.innerHTML = "";
     switch (product) {
         case "Cakes":
        //tr.innerHTML = "";
@@ -105,7 +99,28 @@ displayProduct = (e) => {
             });
             break;
         case "Cookies":
+        //    let tr = document.createElement('tr');
+           let counter = 2;
+           while (counter <= cookieArray.length) {
+               console.log(counter);
+            // let tr = document.createElement('tr');
+               cookieArray.filter(function populateTable(element){
+                   console.log(element);
+                   let tr = document.createElement('tr');
+                   for(const property in element){
+                    let td = document.createElement('td');
+                       console.log(element[property]);
+                       td.innerHTML = element[property];
+                       tr.appendChild(td);
+                   }
+                   tbody.appendChild(tr);
+               })
+
+                counter++
+
+           };
            
+
             break;
         default:
             console.log('nothing to see');
