@@ -60,3 +60,26 @@ li:hover{
     display: inline-block;
     border-radius: 5px;
 }
+
+#productTable{
+    width: 50%;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th{
+    border-bottom: 1px solid #ddd;
+}
+
+td{
+    border-bottom: 1px solid #ddd;
+}
+
+tr{
+    border-bottom: 1px solid #ddd;
+}
+
+tr :hover {
+    background-color: #f2f2f2;
+}

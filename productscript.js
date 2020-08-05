@@ -65,62 +65,37 @@ displayProduct = (e) => {
     tbody.innerHTML = "";
     switch (product) {
         case "Cakes":
-       //tr.innerHTML = "";
-        json.filter(function filterCategory(item){
-            if(item.category === product){
-                for(const property in item){
-                    if(property !== 'id' && property !== 'category'){
-                        
-                        let td = document.createElement('td');
-                        td.innerHTML = item[property];
-                        
-                        tr.appendChild(td);
-                        tbody.appendChild(tr);
-                    }
-                   
+            cakeArray.filter(function populateTable(element){
+                let tr = document.createElement('tr');
+                for(const property in element){
+                 let td = document.createElement('td');
+                    td.innerHTML = element[property];
+                    tr.appendChild(td);
                 }
-       
-            }
-        });
+                tbody.appendChild(tr);
+            });
             break;
         case "Bread":
-            tr.innerHTML = "";
-            json.filter(function filterCategory(item){
-                if(item.category === product){
-                    for(const property in item){
-                        if(property !== 'id' && property !== 'category'){
-                            let td = document.createElement('td');
-                            td.innerHTML = item[property];
-                            tr.appendChild(td);
-                        }
-                       
-                    }
+            breadArray.filter(function populateTable(element){
+                let tr = document.createElement('tr');
+                for(const property in element){
+                 let td = document.createElement('td');
+                    td.innerHTML = element[property];
+                    tr.appendChild(td);
                 }
+                tbody.appendChild(tr);
             });
             break;
         case "Cookies":
-        //    let tr = document.createElement('tr');
-           let counter = 2;
-           while (counter <= cookieArray.length) {
-               console.log(counter);
-            // let tr = document.createElement('tr');
-               cookieArray.filter(function populateTable(element){
-                   console.log(element);
-                   let tr = document.createElement('tr');
-                   for(const property in element){
-                    let td = document.createElement('td');
-                       console.log(element[property]);
-                       td.innerHTML = element[property];
-                       tr.appendChild(td);
-                   }
-                   tbody.appendChild(tr);
-               })
-
-                counter++
-
-           };
-           
-
+            cookieArray.filter(function populateTable(element){
+                let tr = document.createElement('tr');
+                for(const property in element){
+                 let td = document.createElement('td');
+                    td.innerHTML = element[property];
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr);
+            });
             break;
         default:
             console.log('nothing to see');
@@ -163,3 +138,25 @@ productNavbar.addEventListener("click", displayProduct, false);
 
 //this was used in the switch case to see the response from the json
    // fetch("./productlist.json").then(response => response.json().then( (jsonResponse) => {console.log(jsonResponse[0])}));
+
+   //used a while loop for displaying each product array in table but I dont think I need it anymore
+          //    let tr = document.createElement('tr');
+        //    let counter = 2;
+        //    while (counter <= cookieArray.length) {
+        //        console.log(counter);
+        //     // let tr = document.createElement('tr');
+        //        cookieArray.filter(function populateTable(element){
+        //            console.log(element);
+        //            let tr = document.createElement('tr');
+        //            for(const property in element){
+        //             let td = document.createElement('td');
+        //                console.log(element[property]);
+        //                td.innerHTML = element[property];
+        //                tr.appendChild(td);
+        //            }
+        //            tbody.appendChild(tr);
+        //        })
+
+        //         counter++
+
+        //    };
