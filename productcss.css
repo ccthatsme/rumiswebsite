@@ -63,27 +63,31 @@ li:hover{
 
 #productTable{
     width: 50%;
-    
+    border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
 }
 
 th{
+    text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
 td{
     border-bottom: 1px solid #ddd;
+    
 }
 
 tr{
     border-bottom: 1px solid #ddd;
 }
 
-tr:hover  {
-    background: grey  !important;
+tr:hover td{
+    background: #CBBFBD  !important;
 }
 
 tr:hover td {
     background: transparent;
 }
+
+
