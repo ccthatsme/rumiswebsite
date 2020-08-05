@@ -80,6 +80,10 @@ tr{
     border-bottom: 1px solid #ddd;
 }
 
-tr :hover {
-    background-color: #f2f2f2;
+tr:hover  {
+    background: grey  !important;
+}
+
+tr:hover td {
+    background: transparent;
 }
