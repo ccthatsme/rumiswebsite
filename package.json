@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ccthatsme/rumiswebsite/issues"
   },
-  "homepage": "https://github.com/ccthatsme/rumiswebsite#readme"
+  "homepage": "https://github.com/ccthatsme/rumiswebsite#readme",
+  "dependencies": {
+    "mapbox-gl": "^1.11.1"
+  }
 }

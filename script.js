@@ -1,3 +1,12 @@
+import mapboxgl from 'mapbox-gl';
+ 
+mapboxgl.accessToken = 'pk.eyJ1IjoiamF2YXNjcmlwdGZ1biIsImEiOiJja2Rud255bmIweTJhMzFwZWJ1dTB4M29jIn0.jiMQf5jB-kuiuCdnbkEomw';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-122.420679, 37.772537],
+});
+
 const element = document.getElementById('container');
 
 function navigateTo(e){

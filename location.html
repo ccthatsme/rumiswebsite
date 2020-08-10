@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="main.css">
     <title>Rumi's Passion</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body>
 
@@ -17,8 +19,20 @@
         <li>Location</li>       
     </ul>
 </div>
-  
 
+<div id="map" style='width: 400px; height: 300px;'>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamF2YXNjcmlwdGZ1biIsImEiOiJja2Rud255bmIweTJhMzFwZWJ1dTB4M29jIn0.jiMQf5jB-kuiuCdnbkEomw';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+    });
+    </script>
+
+
+</div>
     <script src="script.js"></script>
   </body>
 </html>
