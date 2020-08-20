@@ -1,6 +1,6 @@
 // const json = fetch("./productlist.json").then(response => response.json()).then(json => console.log(json));
 const tbody = document.getElementById('data');
-// const tr = document.createElement('tr');
+
 
 const json = [];
 const cookieArray = [];
@@ -67,33 +67,44 @@ displayProduct = (e) => {
         case "Cakes":
             cakeArray.filter(function populateTable(element){
                 let tr = document.createElement('tr');
+                let button = document.createElement('button');
+                button.innerHTML = 'Add to Cart';
                 for(const property in element){
                  let td = document.createElement('td');
                     td.innerHTML = element[property];
                     tr.appendChild(td);
                 }
+                tr.appendChild(button);
                 tbody.appendChild(tr);
             });
             break;
         case "Bread":
             breadArray.filter(function populateTable(element){
                 let tr = document.createElement('tr');
+                let button = document.createElement('button');
+                button.innerHTML = 'Add to Cart';
                 for(const property in element){
                  let td = document.createElement('td');
                     td.innerHTML = element[property];
                     tr.appendChild(td);
                 }
+                tr.appendChild(button);
                 tbody.appendChild(tr);
             });
             break;
         case "Cookies":
             cookieArray.filter(function populateTable(element){
                 let tr = document.createElement('tr');
+                let button = document.createElement('button');
+                button.setAttribute('id','cartButton');
+                button.innerHTML = 'Add to Cart';
+                button.addEventListener('click', addToCart, false);
                 for(const property in element){
                  let td = document.createElement('td');
                     td.innerHTML = element[property];
                     tr.appendChild(td);
                 }
+                tr.appendChild(button);
                 tbody.appendChild(tr);
             });
             break;
@@ -102,7 +113,6 @@ displayProduct = (e) => {
             break;
     }
 }
-
 
 
 function navigateTo(e){
@@ -130,33 +140,21 @@ function navigateTo(e){
    
 };
 
+// addToCart = (e) =>{
+//     console.log('test');
+// }
+function addToCart(e){
+    console.log('test');
+}
+
 navbar.addEventListener("click", navigateTo, false);
 
 productNavbar.addEventListener("click", displayProduct, false);
 
 
 
-//this was used in the switch case to see the response from the json
-   // fetch("./productlist.json").then(response => response.json().then( (jsonResponse) => {console.log(jsonResponse[0])}));
 
-   //used a while loop for displaying each product array in table but I dont think I need it anymore
-          //    let tr = document.createElement('tr');
-        //    let counter = 2;
-        //    while (counter <= cookieArray.length) {
-        //        console.log(counter);
-        //     // let tr = document.createElement('tr');
-        //        cookieArray.filter(function populateTable(element){
-        //            console.log(element);
-        //            let tr = document.createElement('tr');
-        //            for(const property in element){
-        //             let td = document.createElement('td');
-        //                console.log(element[property]);
-        //                td.innerHTML = element[property];
-        //                tr.appendChild(td);
-        //            }
-        //            tbody.appendChild(tr);
-        //        })
 
-        //         counter++
 
-        //    };
+
+
