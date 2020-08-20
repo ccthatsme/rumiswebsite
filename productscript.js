@@ -68,7 +68,9 @@ displayProduct = (e) => {
             cakeArray.filter(function populateTable(element){
                 let tr = document.createElement('tr');
                 let button = document.createElement('button');
+                button.setAttribute('id','cartButton');
                 button.innerHTML = 'Add to Cart';
+                button.addEventListener('click', addToCart, false);
                 for(const property in element){
                  let td = document.createElement('td');
                     td.innerHTML = element[property];
@@ -82,7 +84,9 @@ displayProduct = (e) => {
             breadArray.filter(function populateTable(element){
                 let tr = document.createElement('tr');
                 let button = document.createElement('button');
+                button.setAttribute('id','cartButton');
                 button.innerHTML = 'Add to Cart';
+                button.addEventListener('click', addToCart, false);
                 for(const property in element){
                  let td = document.createElement('td');
                     td.innerHTML = element[property];
@@ -140,12 +144,14 @@ function navigateTo(e){
    
 };
 
-// addToCart = (e) =>{
+addToCart = (e) =>{
+    console.log('test');
+    console.log(e);
+    console.log(e.path[1].cells[0].innerHTML);
+}
+// function addToCart(e){
 //     console.log('test');
 // }
-function addToCart(e){
-    console.log('test');
-}
 
 navbar.addEventListener("click", navigateTo, false);
 
