@@ -145,9 +145,12 @@ function navigateTo(e){
 };
 
 addToCart = (e) =>{
-    console.log('test');
-    console.log(e);
-    console.log(e.path[1].cells[0].innerHTML);
+    let newElement = {};
+    newElement['Item'] = e.path[1].cells[0].innerHTML;
+    newElement['Size'] = e.path[1].cells[1].innerHTML;
+    newElement['Price'] = e.path[1].cells[2].innerHTML;
+    console.log(newElement);
+
 }
 // function addToCart(e){
 //     console.log('test');
