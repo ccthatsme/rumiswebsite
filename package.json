@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/ccthatsme/rumiswebsite#readme",
   "dependencies": {
+    "filesystem": "^1.0.1",
+    "fs": "0.0.1-security",
     "mapbox-gl": "^1.11.1"
   }
 }

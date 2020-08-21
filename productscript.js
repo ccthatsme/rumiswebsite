@@ -2,6 +2,7 @@
 const tbody = document.getElementById('data');
 
 
+
 const json = [];
 const cookieArray = [];
 const breadArray = [];
@@ -149,7 +150,6 @@ addToCart = (e) =>{
     newElement['Item'] = e.path[1].cells[0].innerHTML;
     newElement['Size'] = e.path[1].cells[1].innerHTML;
     newElement['Price'] = e.path[1].cells[2].innerHTML;
-    console.log(newElement);
 
 }
 // function addToCart(e){
