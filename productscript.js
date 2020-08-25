@@ -1,7 +1,9 @@
 // const json = fetch("./productlist.json").then(response => response.json()).then(json => console.log(json));
 const tbody = document.getElementById('data');
 
-
+function loadHello(){
+    fetch("http://localhost:3000/hello").then(response => console.log(response.text));
+};
 
 const json = [];
 const cookieArray = [];
@@ -150,7 +152,7 @@ addToCart = (e) =>{
     newElement['Item'] = e.path[1].cells[0].innerHTML;
     newElement['Size'] = e.path[1].cells[1].innerHTML;
     newElement['Price'] = e.path[1].cells[2].innerHTML;
-
+console.log(loadHello());
 }
 // function addToCart(e){
 //     console.log('test');
