@@ -2,7 +2,7 @@
 const tbody = document.getElementById('data');
 
 function loadHello(){
-    fetch("http://localhost:3000/hello").then(response => console.log(response.text));
+    fetch("http://localhost:3000/hello").then(response => response.text()).then(text => console.log(text));
 };
 
 const json = [];
