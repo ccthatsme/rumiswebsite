@@ -1,12 +1,6 @@
-// const json = fetch("./productlist.json").then(response => response.json()).then(json => console.log(json));
 const tbody = document.getElementById('data');
 
-//this was testing the get response from server succesfully printed hello
-// function loadHello(){
-//     fetch("http://localhost:3000/hello").then(response => response.text()).then(text => console.log(text));
-// };
-
-
+const cartArray = [];
 const json = [];
 const cookieArray = [];
 const breadArray = [];
@@ -142,34 +136,30 @@ function navigateTo(e){
         break;
 
     }
-
-    //this can work as well, but back button issues?
-    // window.location.href = 'products.html';
-
    
 };
 
 addToCart = (e) =>{
-   // e.preventDefault();
+    e.preventDefault();
     let newElement = {};
-    let newElement2 = {test:"one", test2:"two"};
     newElement['Item'] = e.path[1].cells[0].innerHTML;
     newElement['Size'] = e.path[1].cells[1].innerHTML;
     newElement['Price'] = e.path[1].cells[2].innerHTML;
-//console.log(newElement);
+
+    cartArray.push(newElement);
+
     fetch('http://localhost:3000/additem', {
         method: 'post',
         headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(newElement),
+        body: JSON.stringify(cartArray),
     }).then((res) => res.json()).then((data) => console.log(data)).catch((err) => console.log(err));
 
+    
+
 }
-// function addToCart(e){
-//     console.log('test');
-// }
 
 navbar.addEventListener("click", navigateTo, false);
 
