@@ -1,4 +1,5 @@
 const tbody = document.getElementById('data');
+const cartNumber = document.getElementById('cartNumber');
 
 const cartArray = [];
 const json = [];
@@ -147,6 +148,8 @@ addToCart = (e) =>{
     newElement['Price'] = e.path[1].cells[2].innerHTML;
 
     cartArray.push(newElement);
+
+    cartNumber.innerHTML = cartArray.length;
 
     fetch('http://localhost:3000/additem', {
         method: 'post',
