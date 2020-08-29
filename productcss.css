@@ -90,4 +90,11 @@ tr:hover td {
     background: transparent;
 }
 
+#cartTotal{
+border-style: solid;
+border-color: steelblue;
+border-radius: 5px;
+display: inline-block;
+float: right;
 
+}
