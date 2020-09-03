@@ -1,5 +1,5 @@
 const tbody = document.getElementById('data');
-const cartNumber = document.getElementById('cartNumber');
+// const cartNumber = document.getElementById('cartNumber');
 
 const cartArray = [];
 const json = [];
@@ -56,6 +56,8 @@ fetch("./productlist.json").then(response => response.json().then((jsonResponse)
     
 }));
 
+
+
 const productNavbar = document.getElementById('productContainer');
 
 const navbar = document.getElementById('container');
@@ -69,6 +71,7 @@ displayProduct = (e) => {
                 let tr = document.createElement('tr');
                 let button = document.createElement('button');
                 button.setAttribute('id','cartButton');
+                button.setAttribute('class','cartClass');
                 button.innerHTML = 'Add to Cart';
                 button.addEventListener('click', addToCart, false);
                 for(const property in element){
@@ -85,6 +88,7 @@ displayProduct = (e) => {
                 let tr = document.createElement('tr');
                 let button = document.createElement('button');
                 button.setAttribute('id','cartButton');
+                button.setAttribute('class','cartClass');
                 button.innerHTML = 'Add to Cart';
                 button.addEventListener('click', addToCart, false);
                 for(const property in element){
@@ -101,6 +105,7 @@ displayProduct = (e) => {
                 let tr = document.createElement('tr');
                 let button = document.createElement('button');
                 button.setAttribute('id','cartButton');
+                button.setAttribute('class','cartClass');
                 button.innerHTML = 'Add to Cart';
                 button.addEventListener('click', addToCart, false);
                 for(const property in element){
@@ -149,7 +154,7 @@ addToCart = (e) =>{
 
     cartArray.push(newElement);
 
-    cartNumber.innerHTML = cartArray.length;
+    // cartNumber.innerHTML = cartArray.length;
 
     fetch('http://localhost:3000/additem', {
         method: 'post',
@@ -158,7 +163,7 @@ addToCart = (e) =>{
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(cartArray),
-    }).then((res) => res.json()).then((data) => console.log(data)).catch((err) => console.log(err));
+    }).then((res) => res.json()).then((data) => data).catch((err) => console.log(err));
 
     
 
