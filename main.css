@@ -40,3 +40,12 @@ li:hover{
     margin-right: auto;
     display: block;
 }
+
+#cartTotal{
+    border-style: solid;
+    border-color: steelblue;
+    border-radius: 5px;
+    display: inline-block;
+    float: right;
+    
+    }

@@ -1,7 +1,7 @@
 const tbody = document.getElementById('data');
-// const cartNumber = document.getElementById('cartNumber');
+const cartNumber = document.getElementById('cartNumber');
 
-const cartArray = [];
+
 const json = [];
 const cookieArray = [];
 const breadArray = [];
@@ -152,18 +152,18 @@ addToCart = (e) =>{
     newElement['Size'] = e.path[1].cells[1].innerHTML;
     newElement['Price'] = e.path[1].cells[2].innerHTML;
 
-    cartArray.push(newElement);
+    // cartArray.push(newElement);
 
     // cartNumber.innerHTML = cartArray.length;
 
     fetch('http://localhost:3000/additem', {
         method: 'post',
         headers: {
-            'Accept': 'application/json, text/plain, */*',
+            
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(cartArray),
-    }).then((res) => res.json()).then((data) => data).catch((err) => console.log(err));
+        body: JSON.stringify(newElement),
+    }).then((res) => res.text()).then((data) => cartNumber.innerHTML = data).catch((err) => console.log(err));
 
     
 
