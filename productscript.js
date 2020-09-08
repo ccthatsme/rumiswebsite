@@ -2,6 +2,7 @@ const tbody = document.getElementById('data');
 const cartNumber = document.getElementById('cartNumber');
 
 
+
 const json = [];
 const cookieArray = [];
 const breadArray = [];

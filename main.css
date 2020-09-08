@@ -47,5 +47,32 @@ li:hover{
     border-radius: 5px;
     display: inline-block;
     float: right;
-    
+
+    }
+
+    .cartSection{
+        display: inline-flex;
+        float: right;
+        flex-direction: column;
+    }
+
+    #clearCart{
+        display: inline-block;
+        float: right; 
+        order: 0;
+        position: relative;
+        top: -20px;
+        background-color: white;
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+        color: fuchsia;
+    }
+
+    #clearCart :hover{
+        /* display: inline-block; */
+        background-color: red;
+        border-radius: 5px;
+        color: white;
+        border: 5px;
     }
