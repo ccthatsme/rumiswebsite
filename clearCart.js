@@ -8,7 +8,7 @@ clearButton.addEventListener('click',function(e){
             
             'Content-Type': 'application/json'
         },
-    }).then((res) => res.status).then((data) => console.log(data)).catch((err) => console.log(err));
+    }).then((res) => res.body).then((data) => console.log(data)).catch((err) => console.log(err));
     
     window.location.replace("products.html");
     
