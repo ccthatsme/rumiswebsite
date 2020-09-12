@@ -92,7 +92,7 @@ tr:hover td {
 
 #cartTotal{
 border-style: solid;
-border-color: steelblue;
+border-color: #f55742;
 border-radius: 5px;
 display: inline-block;
 float: right;
@@ -115,12 +115,12 @@ float: right;
     padding: 8px;
     border-radius: 5px;
     border: none;
-    color: fuchsia;
+    color: black;
 }
 
-#clearCart :hover{
+#clearCart:hover{
     /* display: inline-block; */
-    background-color: red;
+    background-color: #f55742;
     border-radius: 5px;
     color: white;
     border: 5px;
